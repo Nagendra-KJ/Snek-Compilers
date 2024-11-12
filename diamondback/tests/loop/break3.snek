@@ -1,0 +1,7 @@
+(loop
+   (block
+       (break 3)
+       (break 4)
+       (break 5)
+    )
+)

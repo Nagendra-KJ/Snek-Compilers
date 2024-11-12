@@ -1,0 +1,19 @@
+(fun (search lst key size)
+    (let ((idx 0))
+		 (loop
+	          (if (>= idx size)
+	    		  (break false)
+	    	      (if (= (vec-get lst idx) key)
+	    		      (break idx)
+	    		      (set! idx (add1 idx))
+	    	      )
+	          )
+              
+
+	     ) 
+    )
+)
+
+(let 
+    ((lst (vec -4 10 34 0 56 1056 -8956 3 -6 45))) 
+	(search lst input 10))

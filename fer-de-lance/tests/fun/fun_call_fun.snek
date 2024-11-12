@@ -1,0 +1,7 @@
+(defn (baz)
+  (+ 5 10)
+)
+(defn (bar foo)
+  (+ (baz) 10)
+)  
+(bar 99)

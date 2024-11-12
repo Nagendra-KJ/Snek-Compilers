@@ -1,0 +1,22 @@
+(let ((x 5) (i 0) (j 0))
+(block
+		(loop
+				(if (< i 5)
+						(block
+								(set! x (add1 x))
+								(set! i (add1 i))
+						)
+						(break x)
+				)
+		)
+		(loop
+				(if (< j 5)
+						(block
+								(set! x (add1 x))
+								(set! j (add1 j))
+						)
+						(break x)
+				)
+		)
+)
+)

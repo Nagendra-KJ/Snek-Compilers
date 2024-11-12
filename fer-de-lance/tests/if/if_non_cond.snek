@@ -1,0 +1,1 @@
+(if (let* ((x 5)) (negate x)) true false)

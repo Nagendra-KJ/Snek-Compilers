@@ -1,0 +1,6 @@
+(fun (sum n)
+  (if (= n 0) 0 
+		(+ n (sum (sub1 n)))
+  )
+)
+(block (sum input))

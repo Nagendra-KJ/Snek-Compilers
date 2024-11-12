@@ -1,0 +1,11 @@
+(fun (iseven add1)
+  (if (= add1 0)
+      true
+      (isodd (sub1 add1))
+  )
+)
+
+(block
+  (print input)
+  (print (iseven input))
+)

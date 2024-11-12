@@ -1,0 +1,51 @@
+(fun (search_bst bst key)
+    (
+	    if (isbool bst) false
+	    (
+		    if (= (vec-get bst 0) key) (print (vec-get bst 0))
+		    (
+			    if (< key (vec-get bst 0))
+				(
+				    search_bst (vec-get bst 1) key
+				)
+				(
+				    search_bst (vec-get bst 2) key
+				)
+			)
+		)
+    )
+)
+
+(
+    fun (input_bst bst key)
+    (
+	    if (isbool bst) (vec key false false)
+	    (
+		    if (< key (vec-get bst 0)) 
+		    (
+			    vec (vec-get bst 0) (input_bst (vec-get bst 1) key) (vec-get bst 2)
+		    ) 
+			(
+			    vec (vec-get bst 0) (vec-get bst 1) (input_bst (vec-get bst 2) key)
+		    )
+		)
+    )
+)
+
+(
+    let
+    (
+	    (bst false)
+    )
+    (
+	    block
+		(set! bst (input_bst bst 4))
+		(set! bst (input_bst bst 0))
+		(set! bst (input_bst bst -87))
+		(set! bst (input_bst bst 479))
+		(set! bst (input_bst bst -56))
+		(set! bst (input_bst bst 32))
+		(set! bst (input_bst bst 2))
+		(search_bst bst input)
+    )
+)

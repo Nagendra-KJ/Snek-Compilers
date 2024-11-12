@@ -1,0 +1,94 @@
+   Compiling boa v0.1.0 (/home/mkolosick/grading-231/02-boa/ucsd-cse231-sp24-02-boa-Nagendra-KJ)
+    Finished test [unoptimized + debuginfo] target(s) in 3.33s
+     Running tests/all_tests.rs (target/debug/deps/all_tests-29974e9917db9cf5)
+
+running 47 tests
+test parse_let_improperargs_fail4 ... ok
+test duplicate_binding_fail1 ... ok
+test duplicate_binding_fail0 ... ok
+test parse_let_improperargs_fail2 ... ok
+test parse_let_improperargs_fail5 ... ok
+test parse_let_improperargs_fail3 ... ok
+test duplicate_binding_fail2 ... ok
+test parse_let_improperargs_fail1 ... ok
+test parse_op_fail5 ... ok
+test parse_sexp_fail2 ... FAILED
+test parse_token_fail2 ... ok
+test parse_token_fail1 ... ok
+test parse_token_fail3 ... ok
+test parse_token_fail4 ... ok
+test parse_op_fail4 ... ok
+test parse_op_fail3 ... ok
+test parse_sexp_fail1 ... FAILED
+test parse_op_fail2 ... ok
+test parse_op_fail1 ... ok
+test parse_let_nobindings_fail ... FAILED
+test binding1 ... ok
+test unbound_identifier_fail0 ... ok
+test unbound_identifier_fail1 ... ok
+test unbound_identifier_fail2 ... ok
+test nested_arith4 ... ok
+test nested_arith1 ... ok
+test add1_sub1 ... ok
+test nested_arith0 ... ok
+test add ... ok
+test shadowed_binding_succ0 ... ok
+test num ... ok
+test binding_chain ... ok
+test nested_arith2 ... ok
+test quick_brown_fox ... ok
+test binding_expr ... ok
+test shadowed_binding_succ5 ... ok
+test binding_nested ... ok
+test nested_arith3 ... ok
+test shadowed_binding_succ3 ... ok
+test shadowed_binding_succ4 ... ok
+test binding0 ... ok
+test add1 ... ok
+test binding_nested_chain ... ok
+test complex_expr ... ok
+test shadowed_binding_succ2 ... ok
+test shadowed_binding_succ6 ... ok
+test shadowed_binding_succ1 ... ok
+
+failures:
+
+---- parse_sexp_fail2 stdout ----
+thread 'parse_sexp_fail2' panicked at tests/infra/mod.rs:83:5:
+the reported error message
+thread 'main' panicked at src/main.rs:234:48:
+Unable to parse file contents: 1:6: unexpected eof
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+does not match, should contain "Invalid"
+points lost: 10
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+---- parse_sexp_fail1 stdout ----
+thread 'parse_sexp_fail1' panicked at tests/infra/mod.rs:83:5:
+the reported error message
+thread 'main' panicked at src/main.rs:234:48:
+Unable to parse file contents: 1:9: unrecognized post-s-expression data
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+does not match, should contain "Invalid"
+points lost: 10
+
+---- parse_let_nobindings_fail stdout ----
+thread 'parse_let_nobindings_fail' panicked at tests/infra/mod.rs:83:5:
+the reported error message
+thread 'main' panicked at src/main.rs:129:29:
+Unbound variable identifier y
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+does not match, should contain "Invalid"
+points lost: 10
+
+
+failures:
+    parse_let_nobindings_fail
+    parse_sexp_fail1
+    parse_sexp_fail2
+
+test result: FAILED. 44 passed; 3 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.79s
+
+error: test failed, to rerun pass `--test all_tests`
+
+ASSIGNMENT SCORE: HIGH PASS

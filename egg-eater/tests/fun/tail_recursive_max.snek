@@ -1,0 +1,6 @@
+(fun (max x y)
+  (if (>= x y) x
+		(max y x)
+  )
+)
+(block (max 0 input))

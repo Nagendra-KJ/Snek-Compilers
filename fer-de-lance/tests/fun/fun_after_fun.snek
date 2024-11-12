@@ -1,0 +1,7 @@
+(defn (double x) (triple x))
+
+(defn (triple x) (* x x))
+
+
+(double input)
+

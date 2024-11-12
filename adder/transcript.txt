@@ -1,0 +1,527 @@
+All operations are done on the number 1, with innermost operation done first. eg add_sub means (add1 (sub1 1))
+All outputs are written in the file outputs.txt
+
+The snek program add_add is:
+🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
+
+(add1 (add1 1))
+
+🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
+
+Making the program:
+
+cargo run -- test/add_add.snek test/add_add.s
+nasm -f elf64 test/add_add.s -o runtime/our_code.o
+ar rcs runtime/libour_code.a runtime/our_code.o
+rustc -L runtime/ runtime/start.rs -o test/add_add.run
+rm test/add_add.s
+cargo run -- test/add_add.snek test/add_add.s
+
+The resulting assembly program is:
+**************************************************************************
+section .text
+global our_code_starts_here
+our_code_starts_here:
+mov rax, 1
+inc rax
+inc rax
+ret
+**************************************************************************
+
+The output for the snek program add_add is: 3
+
+The snek program add_neg is:
+🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
+
+(add1 (negate 1))
+
+🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
+
+Making the program:
+
+cargo run -- test/add_neg.snek test/add_neg.s
+nasm -f elf64 test/add_neg.s -o runtime/our_code.o
+ar rcs runtime/libour_code.a runtime/our_code.o
+rustc -L runtime/ runtime/start.rs -o test/add_neg.run
+rm test/add_neg.s
+cargo run -- test/add_neg.snek test/add_neg.s
+
+The resulting assembly program is:
+**************************************************************************
+section .text
+global our_code_starts_here
+our_code_starts_here:
+mov rax, 1
+neg rax
+inc rax
+ret
+**************************************************************************
+
+The output for the snek program add_neg is: 0
+
+The snek program add_neg_sub is:
+🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
+
+(add1 (negate (sub1 1)))
+
+🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
+
+Making the program:
+
+cargo run -- test/add_neg_sub.snek test/add_neg_sub.s
+nasm -f elf64 test/add_neg_sub.s -o runtime/our_code.o
+ar rcs runtime/libour_code.a runtime/our_code.o
+rustc -L runtime/ runtime/start.rs -o test/add_neg_sub.run
+rm test/add_neg_sub.s
+cargo run -- test/add_neg_sub.snek test/add_neg_sub.s
+
+The resulting assembly program is:
+**************************************************************************
+section .text
+global our_code_starts_here
+our_code_starts_here:
+mov rax, 1
+dec rax
+neg rax
+inc rax
+ret
+**************************************************************************
+
+The output for the snek program add_neg_sub is: 1
+
+The snek program add is:
+🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
+
+(add1 1)
+
+🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
+
+Making the program:
+
+cargo run -- test/add.snek test/add.s
+nasm -f elf64 test/add.s -o runtime/our_code.o
+ar rcs runtime/libour_code.a runtime/our_code.o
+rustc -L runtime/ runtime/start.rs -o test/add.run
+rm test/add.s
+cargo run -- test/add.snek test/add.s
+
+The resulting assembly program is:
+**************************************************************************
+section .text
+global our_code_starts_here
+our_code_starts_here:
+mov rax, 1
+inc rax
+ret
+**************************************************************************
+
+The output for the snek program add is: 2
+
+The snek program add_sub_neg is:
+🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
+
+(add1 (sub1 (negate 1)))
+
+🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
+
+Making the program:
+
+cargo run -- test/add_sub_neg.snek test/add_sub_neg.s
+nasm -f elf64 test/add_sub_neg.s -o runtime/our_code.o
+ar rcs runtime/libour_code.a runtime/our_code.o
+rustc -L runtime/ runtime/start.rs -o test/add_sub_neg.run
+rm test/add_sub_neg.s
+cargo run -- test/add_sub_neg.snek test/add_sub_neg.s
+
+The resulting assembly program is:
+**************************************************************************
+section .text
+global our_code_starts_here
+our_code_starts_here:
+mov rax, 1
+neg rax
+dec rax
+inc rax
+ret
+**************************************************************************
+
+The output for the snek program add_sub_neg is: -1
+
+The snek program add_sub is:
+🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
+
+(add1 (sub1 1))
+
+🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
+
+Making the program:
+
+cargo run -- test/add_sub.snek test/add_sub.s
+nasm -f elf64 test/add_sub.s -o runtime/our_code.o
+ar rcs runtime/libour_code.a runtime/our_code.o
+rustc -L runtime/ runtime/start.rs -o test/add_sub.run
+rm test/add_sub.s
+cargo run -- test/add_sub.snek test/add_sub.s
+
+The resulting assembly program is:
+**************************************************************************
+section .text
+global our_code_starts_here
+our_code_starts_here:
+mov rax, 1
+dec rax
+inc rax
+ret
+**************************************************************************
+
+The output for the snek program add_sub is: 1
+
+The snek program neg_add is:
+🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
+
+(negate (add1 1))
+
+🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
+
+Making the program:
+
+cargo run -- test/neg_add.snek test/neg_add.s
+nasm -f elf64 test/neg_add.s -o runtime/our_code.o
+ar rcs runtime/libour_code.a runtime/our_code.o
+rustc -L runtime/ runtime/start.rs -o test/neg_add.run
+rm test/neg_add.s
+cargo run -- test/neg_add.snek test/neg_add.s
+
+The resulting assembly program is:
+**************************************************************************
+section .text
+global our_code_starts_here
+our_code_starts_here:
+mov rax, 1
+inc rax
+neg rax
+ret
+**************************************************************************
+
+The output for the snek program neg_add is: -2
+
+The snek program neg_add_sub is:
+🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
+
+(negate (add1 (sub1 1)))
+
+🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
+
+Making the program:
+
+cargo run -- test/neg_add_sub.snek test/neg_add_sub.s
+nasm -f elf64 test/neg_add_sub.s -o runtime/our_code.o
+ar rcs runtime/libour_code.a runtime/our_code.o
+rustc -L runtime/ runtime/start.rs -o test/neg_add_sub.run
+rm test/neg_add_sub.s
+cargo run -- test/neg_add_sub.snek test/neg_add_sub.s
+
+The resulting assembly program is:
+**************************************************************************
+section .text
+global our_code_starts_here
+our_code_starts_here:
+mov rax, 1
+dec rax
+inc rax
+neg rax
+ret
+**************************************************************************
+
+The output for the snek program neg_add_sub is: -1
+
+The snek program neg_neg is:
+🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
+
+(negate (negate 1))
+
+🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
+
+Making the program:
+
+cargo run -- test/neg_neg.snek test/neg_neg.s
+nasm -f elf64 test/neg_neg.s -o runtime/our_code.o
+ar rcs runtime/libour_code.a runtime/our_code.o
+rustc -L runtime/ runtime/start.rs -o test/neg_neg.run
+rm test/neg_neg.s
+cargo run -- test/neg_neg.snek test/neg_neg.s
+
+The resulting assembly program is:
+**************************************************************************
+section .text
+global our_code_starts_here
+our_code_starts_here:
+mov rax, 1
+neg rax
+neg rax
+ret
+**************************************************************************
+
+The output for the snek program neg_neg is: 1
+
+The snek program neg is:
+🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
+
+(negate 1)
+
+🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
+
+Making the program:
+
+cargo run -- test/neg.snek test/neg.s
+nasm -f elf64 test/neg.s -o runtime/our_code.o
+ar rcs runtime/libour_code.a runtime/our_code.o
+rustc -L runtime/ runtime/start.rs -o test/neg.run
+rm test/neg.s
+cargo run -- test/neg.snek test/neg.s
+
+The resulting assembly program is:
+**************************************************************************
+section .text
+global our_code_starts_here
+our_code_starts_here:
+mov rax, 1
+neg rax
+ret
+**************************************************************************
+
+The output for the snek program neg is: -1
+
+The snek program neg_sub_add is:
+🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
+
+(negate (sub1 (add1 1)))
+
+🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
+
+Making the program:
+
+cargo run -- test/neg_sub_add.snek test/neg_sub_add.s
+nasm -f elf64 test/neg_sub_add.s -o runtime/our_code.o
+ar rcs runtime/libour_code.a runtime/our_code.o
+rustc -L runtime/ runtime/start.rs -o test/neg_sub_add.run
+rm test/neg_sub_add.s
+cargo run -- test/neg_sub_add.snek test/neg_sub_add.s
+
+The resulting assembly program is:
+**************************************************************************
+section .text
+global our_code_starts_here
+our_code_starts_here:
+mov rax, 1
+inc rax
+dec rax
+neg rax
+ret
+**************************************************************************
+
+The output for the snek program neg_sub_add is: -1
+
+The snek program neg_sub is:
+🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
+
+(negate (sub1 1))
+
+🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
+
+Making the program:
+
+cargo run -- test/neg_sub.snek test/neg_sub.s
+nasm -f elf64 test/neg_sub.s -o runtime/our_code.o
+ar rcs runtime/libour_code.a runtime/our_code.o
+rustc -L runtime/ runtime/start.rs -o test/neg_sub.run
+rm test/neg_sub.s
+cargo run -- test/neg_sub.snek test/neg_sub.s
+
+The resulting assembly program is:
+**************************************************************************
+section .text
+global our_code_starts_here
+our_code_starts_here:
+mov rax, 1
+dec rax
+neg rax
+ret
+**************************************************************************
+
+The output for the snek program neg_sub is: 0
+
+The snek program sub_add_neg is:
+🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
+
+(sub1 (add1 (negate 1)))
+
+🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
+
+Making the program:
+
+cargo run -- test/sub_add_neg.snek test/sub_add_neg.s
+nasm -f elf64 test/sub_add_neg.s -o runtime/our_code.o
+ar rcs runtime/libour_code.a runtime/our_code.o
+rustc -L runtime/ runtime/start.rs -o test/sub_add_neg.run
+rm test/sub_add_neg.s
+cargo run -- test/sub_add_neg.snek test/sub_add_neg.s
+
+The resulting assembly program is:
+**************************************************************************
+section .text
+global our_code_starts_here
+our_code_starts_here:
+mov rax, 1
+neg rax
+inc rax
+dec rax
+ret
+**************************************************************************
+
+The output for the snek program sub_add_neg is: -1
+
+The snek program sub_add is:
+🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
+
+(sub1 (add1 1))
+
+🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
+
+Making the program:
+
+cargo run -- test/sub_add.snek test/sub_add.s
+nasm -f elf64 test/sub_add.s -o runtime/our_code.o
+ar rcs runtime/libour_code.a runtime/our_code.o
+rustc -L runtime/ runtime/start.rs -o test/sub_add.run
+rm test/sub_add.s
+cargo run -- test/sub_add.snek test/sub_add.s
+
+The resulting assembly program is:
+**************************************************************************
+section .text
+global our_code_starts_here
+our_code_starts_here:
+mov rax, 1
+inc rax
+dec rax
+ret
+**************************************************************************
+
+The output for the snek program sub_add is: 1
+
+The snek program sub_neg_add is:
+🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
+
+(sub1 (negate (add1 1)))
+
+🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
+
+Making the program:
+
+cargo run -- test/sub_neg_add.snek test/sub_neg_add.s
+nasm -f elf64 test/sub_neg_add.s -o runtime/our_code.o
+ar rcs runtime/libour_code.a runtime/our_code.o
+rustc -L runtime/ runtime/start.rs -o test/sub_neg_add.run
+rm test/sub_neg_add.s
+cargo run -- test/sub_neg_add.snek test/sub_neg_add.s
+
+The resulting assembly program is:
+**************************************************************************
+section .text
+global our_code_starts_here
+our_code_starts_here:
+mov rax, 1
+inc rax
+neg rax
+dec rax
+ret
+**************************************************************************
+
+The output for the snek program sub_neg_add is: -3
+
+The snek program sub_neg is:
+🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
+
+(sub1 (negate 1))
+
+🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
+
+Making the program:
+
+cargo run -- test/sub_neg.snek test/sub_neg.s
+nasm -f elf64 test/sub_neg.s -o runtime/our_code.o
+ar rcs runtime/libour_code.a runtime/our_code.o
+rustc -L runtime/ runtime/start.rs -o test/sub_neg.run
+rm test/sub_neg.s
+cargo run -- test/sub_neg.snek test/sub_neg.s
+
+The resulting assembly program is:
+**************************************************************************
+section .text
+global our_code_starts_here
+our_code_starts_here:
+mov rax, 1
+neg rax
+dec rax
+ret
+**************************************************************************
+
+The output for the snek program sub_neg is: -2
+
+The snek program sub is:
+🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
+
+(sub1 1)
+
+🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
+
+Making the program:
+
+cargo run -- test/sub.snek test/sub.s
+nasm -f elf64 test/sub.s -o runtime/our_code.o
+ar rcs runtime/libour_code.a runtime/our_code.o
+rustc -L runtime/ runtime/start.rs -o test/sub.run
+rm test/sub.s
+cargo run -- test/sub.snek test/sub.s
+
+The resulting assembly program is:
+**************************************************************************
+section .text
+global our_code_starts_here
+our_code_starts_here:
+mov rax, 1
+dec rax
+ret
+**************************************************************************
+
+The output for the snek program sub is: 0
+
+The snek program sub_sub is:
+🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
+
+(sub1 (sub1 1))
+
+🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
+
+Making the program:
+
+cargo run -- test/sub_sub.snek test/sub_sub.s
+nasm -f elf64 test/sub_sub.s -o runtime/our_code.o
+ar rcs runtime/libour_code.a runtime/our_code.o
+rustc -L runtime/ runtime/start.rs -o test/sub_sub.run
+rm test/sub_sub.s
+cargo run -- test/sub_sub.snek test/sub_sub.s
+
+The resulting assembly program is:
+**************************************************************************
+section .text
+global our_code_starts_here
+our_code_starts_here:
+mov rax, 1
+dec rax
+dec rax
+ret
+**************************************************************************
+
+The output for the snek program sub_sub is: -1

@@ -1,0 +1,150 @@
+    Finished test [unoptimized + debuginfo] target(s) in 0.42s
+     Running tests/all_tests.rs (target/debug/deps/all_tests-cbea0fe4915a3ce7)
+
+running 100 tests
+test duplicate_binding_fail0 ... ok
+test duplicate_binding_fail2 ... ok
+test duplicate_binding_fail1 ... ok
+test add_num ... ok
+test invalid_argument_fail0 ... ok
+test if_expr_succ0 ... ok
+test add1_sub1 ... ok
+test binding_nested_chain ... ok
+test if_expr_succ2 ... ok
+test add1 ... ok
+test compare_expr_succ0 ... ok
+test input_num ... ok
+test invalid_break_fail0 ... ok
+test binding1 ... ok
+test invalid_loop_fail0 ... ok
+test invalid_argument_fail1 ... ok
+test if_expr_succ3 ... ok
+test binding0 ... ok
+test complex_expr ... ok
+test input_bool ... ok
+test invalid_argument_fail11 ... ok
+test binding_expr ... ok
+test false_val ... ok
+test number_bounds_fail0 ... ok
+test binding_nested ... ok
+test if_expr_succ1 ... ok
+test number_bounds_fail1 ... ok
+test number_overflow_fail0 ... FAILED
+test number_overflow_fail1 ... FAILED
+test invalid_argument_fail10 ... ok
+test parse_if_fail0 ... ok
+test binding_chain ... ok
+test parse_if_fail1 ... ok
+test input_default ... ok
+test parse_let_improperargs_fail1 ... ok
+test compare_expr_succ2 ... ok
+test parse_let_improperargs_fail2 ... ok
+test parse_let_improperargs_fail3 ... ok
+test parse_let_improperargs_fail5 ... ok
+test parse_let_nobindings_fail ... FAILED
+test parse_let_improperargs_fail4 ... ok
+test parse_op_fai4 ... ok
+test parse_op_fail1 ... ok
+test parse_op_fail2 ... ok
+test parse_op_fail3 ... ok
+test parse_op_fail5 ... ok
+test parse_op_fail6 ... ok
+test parse_op_fail8 ... ok
+test parse_op_fail7 ... ok
+test parse_sexp_fail1 ... ok
+test parse_sexp_fail2 ... ok
+test parse_token_fail1 ... ok
+test parse_token_fail2 ... ok
+test parse_token_fail3 ... ok
+test parse_token_fail4 ... ok
+test invalid_argument_fail3 ... ok
+test invalid_argument_fail8 ... ok
+test invalid_argument_fail5 ... ok
+test invalid_argument_fail4 ... ok
+test invalid_argument_fail7 ... ok
+test invalid_argument_fail2 ... ok
+test nested_arith0 ... ok
+test loop_expr_succ0 ... ok
+test number_overflow_fail3 ... ok
+test loop_expr_succ2 ... ok
+test parse_block_fail0 ... FAILED
+test num ... ok
+test nested_arith2 ... ok
+test nested_arith3 ... ok
+test invalid_argument_fail6 ... ok
+test invalid_argument_fail9 ... ok
+test unbound_identifier_fail0 ... ok
+test unbound_identifier_fail1 ... ok
+test set_expr_succ0 ... ok
+test unbound_identifier_fail2 ... ok
+test unbound_identifier_fail3 ... ok
+test nested_arith4 ... ok
+test unbound_identifier_fail5 ... ok
+test nested_arith1 ... ok
+test unbound_identifier_fail4 ... ok
+test loop_expr_succ1 ... ok
+test set_expr_succ1 ... ok
+test quick_brown_fox ... ok
+test number_overflow_fail2 ... ok
+test set_expr_succ2 ... ok
+test set_expr_succ3 ... ok
+test shadowed_binding_succ0 ... ok
+test shadowed_binding_succ4 ... ok
+test shadowed_binding_succ1 ... ok
+test shadowed_binding_succ7 ... ok
+test shadowed_binding_succ2 ... ok
+test shadowed_binding_succ3 ... ok
+test type_check_succ1 ... ok
+test shadowed_binding_succ6 ... ok
+test shadowed_binding_succ5 ... ok
+test type_check_succ0 ... ok
+test type_check_succ2 ... ok
+test type_check_succ4 ... ok
+test type_check_succ5 ... ok
+test type_check_succ3 ... ok
+
+failures:
+
+---- number_overflow_fail0 stdout ----
+thread 'number_overflow_fail0' panicked at tests/infra/mod.rs:87:9:
+expected a successful compilation, but got an error: `thread 'main' panicked at src/main.rs:150:9:
+Invalid 32 bit number provided
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+`
+points lost: 20
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+---- number_overflow_fail1 stdout ----
+thread 'number_overflow_fail1' panicked at tests/infra/mod.rs:87:9:
+expected a successful compilation, but got an error: `thread 'main' panicked at src/main.rs:150:9:
+Invalid 32 bit number provided
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+`
+points lost: 20
+
+---- parse_let_nobindings_fail stdout ----
+thread 'parse_let_nobindings_fail' panicked at tests/infra/mod.rs:140:5:
+the reported error message:
+thread 'main' panicked at src/main.rs:289:21:
+Unbound variable identifier y
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+does not match, should contain: "Invalid"
+points lost: 10
+
+---- parse_block_fail0 stdout ----
+thread 'parse_block_fail0' panicked at tests/infra/mod.rs:99:19:
+expected a failure, but compilation succeeded
+points lost: 20
+
+
+failures:
+    number_overflow_fail0
+    number_overflow_fail1
+    parse_block_fail0
+    parse_let_nobindings_fail
+
+test result: FAILED. 96 passed; 4 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.40s
+
+error: test failed, to rerun pass `--test all_tests`
+
+ASSIGNMENT SCORE: HIGH PASS

@@ -1,0 +1,14 @@
+(let 
+		((lexp 20) 
+		(rexp 
+				(let 
+						((not_lexp (let
+										((def_nl 25) (def_nr 5)) (+ def_nl def_nr)
+								   )
+						 ) 
+						(not_rexp 20)) 
+						(+ not_lexp not_rexp)
+				)
+		)) 
+		(+ lexp rexp)
+)

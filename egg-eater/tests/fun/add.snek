@@ -1,0 +1,4 @@
+(fun (add num1 num2)
+  (+ num1 num2)
+)
+(block (add input input))

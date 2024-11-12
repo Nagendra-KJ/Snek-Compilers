@@ -1,0 +1,14 @@
+(let*
+		((i 1) (fib1 0) (fib2 1) (fib 1))
+		(loop
+				(if (> i input)
+						(break fib1)
+						(block 
+								(set! fib1 fib2)
+								(set! fib2 fib)
+								(set! fib (+ fib1 fib2))
+								(set! i (+ i 1))
+						)
+				)
+		)
+)

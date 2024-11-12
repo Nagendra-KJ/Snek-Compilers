@@ -1,0 +1,12 @@
+(let ((x 5) (y 10) (z 15) (res 0))
+		(block
+				(if (> x y) 
+						
+								(if (> x z) (set! res x) (set! res z))
+						
+								(if (> y z) (set! res y) (set! res z))
+				)
+				res
+		)
+)
+

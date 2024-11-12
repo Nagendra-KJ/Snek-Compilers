@@ -1,0 +1,7 @@
+(fun (double x) (triple x))
+
+(fun (triple x) (* x x))
+
+
+(double input)
+

@@ -1,0 +1,7 @@
+(defn (f it)
+    (it 5))
+
+(defn (add x y)
+    (+ x y))
+
+(f add)

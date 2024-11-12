@@ -1,0 +1,164 @@
+   Compiling diamondback v0.1.0 (/home/mkolosick/grading-231/04-diamondback/ucsd-cse231-sp24-04-diamondback-Nagendra-KJ)
+    Finished test [unoptimized + debuginfo] target(s) in 1.89s
+     Running tests/all_tests.rs (target/debug/deps/all_tests-357efc2642845c9b)
+
+running 141 tests
+test boa_duplicate_binding_fail0 ... ok
+test boa_duplicate_binding_fail1 ... ok
+test boa_duplicate_binding_fail2 ... ok
+test boa_parse_op_fail3 ... ok
+test boa_parse_let_improperargs_fail3 ... ok
+test boa_parse_let_improperargs_fail5 ... ok
+test boa_parse_let_improperargs_fail4 ... ok
+test boa_parse_op_fail2 ... ok
+test boa_parse_op_fai4 ... ok
+test boa_parse_let_improperargs_fail1 ... ok
+test boa_parse_op_fail1 ... ok
+test boa_parse_let_improperargs_fail2 ... ok
+test boa_parse_let_nobindings_fail ... ok
+test boa_parse_op_fail5 ... ok
+test boa_parse_sexp_fail1 ... ok
+test boa_parse_sexp_fail2 ... ok
+test boa_parse_token_fail3 ... ok
+test boa_parse_token_fail1 ... ok
+test boa_parse_token_fail2 ... ok
+test boa_parse_token_fail4 ... ok
+test boa_unbound_identifier_fail1 ... ok
+test boa_unbound_identifier_fail0 ... ok
+test boa_unbound_identifier_fail2 ... ok
+test adder_add1_sub1 ... ok
+test adder_num ... ok
+test boa_shadowed_binding_succ0 ... ok
+test boa_binding_nested_chain ... ok
+test adder_add1 ... ok
+test boa_complex_expr ... ok
+test boa_shadowed_binding_succ4 ... ok
+test boa_nested_arith2 ... ok
+test cobra_add_num ... ok
+test boa_binding1 ... ok
+test boa_shadowed_binding_succ3 ... ok
+test boa_nested_arith4 ... ok
+test boa_shadowed_binding_succ1 ... ok
+test boa_shadowed_binding_succ2 ... ok
+test boa_nested_arith1 ... ok
+test boa_binding_chain ... ok
+test boa_binding_expr ... ok
+test cobra_compare_expr_succ0 ... ok
+test boa_quick_brown_fox ... ok
+test boa_binding_nested ... ok
+test boa_shadowed_binding_succ6 ... ok
+test boa_binding0 ... ok
+test boa_nested_arith0 ... ok
+test cobra_invalid_break_fail0 ... ok
+test cobra_invalid_loop_fail0 ... ok
+test boa_shadowed_binding_succ5 ... ok
+test cobra_compare_expr_succ2 ... ok
+test cobra_if_expr_succ0 ... ok
+test cobra_number_bounds_fail0 ... ok
+test cobra_input_bool ... ok
+test cobra_number_bounds_fail1 ... ok
+test cobra_if_expr_succ2 ... ok
+test cobra_if_expr_succ1 ... ok
+test cobra_invalid_argument_fail8 ... ok
+test cobra_invalid_argument_fail1 ... ok
+test cobra_false_val ... ok
+test cobra_parse_block_fail0 ... ok
+test cobra_parse_if_fail0 ... ok
+test cobra_if_expr_succ3 ... ok
+test cobra_parse_op_fail7 ... ok
+test cobra_parse_op_fail6 ... ok
+test cobra_parse_if_fail1 ... ok
+test cobra_parse_op_fail8 ... ok
+test cobra_invalid_argument_fail3 ... ok
+test cobra_invalid_argument_fail9 ... ok
+test cobra_input_default ... ok
+test cobra_invalid_argument_fail10 ... ok
+test cobra_invalid_argument_fail11 ... ok
+test cobra_invalid_argument_fail0 ... ok
+test cobra_loop_expr_succ1 ... ok
+test cobra_invalid_argument_fail2 ... ok
+test cobra_unbound_identifier_fail3 ... ok
+test cobra_unbound_identifier_fail4 ... ok
+test cobra_loop_expr_succ0 ... ok
+test cobra_loop_expr_succ2 ... ok
+test cobra_unbound_identifier_fail5 ... ok
+test cobra_input_num ... ok
+test cobra_invalid_argument_fail4 ... ok
+test cobra_invalid_argument_fail7 ... ok
+test diamondback_fun_duplicate_names_fail ... ok
+test diamondback_fun_duplicate_parameters_fail0 ... ok
+test cobra_invalid_argument_fail5 ... ok
+test diamondback_fun_duplicate_parameters_fail1 ... ok
+test cobra_invalid_argument_fail6 ... ok
+test diamondback_fun_input_fail1 ... ok
+test diamondback_fun_input_fail0 ... ok
+test cobra_nested_arith3 ... ok
+test cobra_number_overflow_fail1 ... ok
+test cobra_set_expr_succ0 ... ok
+test diamondback_fun_not_exists_fail ... ok
+test cobra_number_overflow_fail3 ... ok
+test diamondback_fun_scope_fail0 ... ok
+test diamondback_fun_scope_fail1 ... ok
+test diamondback_fun_scope_fail2 ... ok
+test diamondback_fun_scope_fail3 ... ok
+test cobra_number_overflow_fail0 ... ok
+test diamondback_fun_wrong_numargs_fail ... ok
+test cobra_shadowed_binding_succ7 ... ok
+test diamondback_function_is_keyword_fail ... ok
+test cobra_number_overflow_fail2 ... ok
+test cobra_type_check_succ4 ... ok
+test cobra_type_check_succ1 ... ok
+test diamondback_nested_fun_fail ... ok
+test diamondback_not_fun_fail0 ... ok
+test diamondback_no_expr_fail ... ok
+test diamondback_not_fun_fail1 ... ok
+test diamondback_not_fun_fail2 ... ok
+test diamondback_not_fun_fail3 ... ok
+test diamondback_not_fun_fail4 ... ok
+test diamondback_not_fun_fail5 ... ok
+test cobra_type_check_succ0 ... ok
+test cobra_set_expr_succ3 ... ok
+test cobra_set_expr_succ2 ... ok
+test cobra_set_expr_succ1 ... ok
+test cobra_type_check_succ5 ... ok
+test cobra_type_check_succ3 ... ok
+test diamondback_calling_chain0 ... ok
+test diamondback_eventually_overflows ... ok
+test diamondback_fun_many_calls ... ok
+test diamondback_conveyer_belt ... ok
+test cobra_type_check_succ2 ... ok
+test diamondback_calling_chain1 ... ok
+test diamondback_fun_many_prints ... ok
+test diamondback_decreasing_args ... ok
+test diamondback_fun_many_args ... ok
+test diamondback_odd_even1 ... ok
+test diamondback_recursion ... ok
+test diamondback_fun_two_args ... ok
+test diamondback_recursive_fibonacci ... ok
+test diamondback_recursive_ackermann ... ok
+test diamondback_odd_even2 ... ok
+test diamondback_recursive_factorial ... ok
+test diamondback_function_arg_is_keyword_fail ... FAILED
+test diamondback_fun_nested_call ... ok
+test diamondback_tail_recursion ... ok
+test diamondback_fun_no_args ... ok
+test diamondback_namespaces ... ok
+test diamondback_many_unused_functions ... ok
+
+failures:
+
+---- diamondback_function_arg_is_keyword_fail stdout ----
+thread 'diamondback_function_arg_is_keyword_fail' panicked at tests/infra/mod.rs:102:19:
+expected a failure, but compilation succeeded
+points lost: 16
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    diamondback_function_arg_is_keyword_fail
+
+test result: FAILED. 140 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.84s
+
+error: test failed, to rerun pass `--test all_tests`
+
+ASSIGNMENT SCORE: HIGH PASS

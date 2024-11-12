@@ -1,0 +1,33 @@
+(
+		let ((i 0) (j 0) (sum 0) (psum 1))
+		(
+				loop
+				(
+						if (>= i input)
+						(
+								break sum
+						)
+						(
+								block
+										(set! i (add1 i))
+										(set! j 0)
+										(set! psum 1)
+										(
+												loop
+												(
+														if (> j 2)
+														(
+																break psum
+														)
+														(
+																block
+																		(set! j (add1 j))
+																		(set! psum (* psum i))
+														)
+												)
+										)
+										(set! sum (+ sum psum))
+						)
+				)
+		)
+)
